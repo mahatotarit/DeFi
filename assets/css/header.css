@@ -1,0 +1,306 @@
+@import url('color.css');
+
+* {
+  padding: 00px;
+  margin: 00px;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.header_background {
+  background-color: var(--header_color) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+body{
+  background-color:var(--main_div_color);
+}
+
+a{
+    text-decoration:none;
+}
+#header {
+  position: fixed;
+  width: 100%;
+  top: 00px;
+  z-index: +99;
+
+  display: flex;
+  justify-content: space-between;
+  align-itemes: center;
+}
+
+.page_top_space_div {
+  height: 100px;
+  width: 100%;
+  background-color: var(--main_div_color);
+}
+
+#header .header_left .web_logo {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#header .header_left {
+  padding: 10px 00px 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .header_right {
+  padding: 10px 24px 10px 00px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .header_left_links .links_a {
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  cursor:pointer;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#header .header_left .header_left_links .links_a:hover {
+  background-color: var(--header_buttons_hover);
+}
+
+#header .header_right .chain_list_div .network_list_img{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+#header .chain_list_div {
+  background-color: var(--header_buttons_normal);
+  padding: 7px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .chain_list_div .selected_chain_logo {
+  margin-right: 8px;
+}
+#header .chain_list_div .chain_list_arrow {
+  margin-left: 4px;
+}
+#header .right_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .connect_button_div button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  margin-left: 15px;
+  color: white;
+  font-size: 16px;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 119, 255),
+    rgb(0, 183, 255)
+  );
+}
+#header .connect_button_div button img {
+  margin-left: 10px;
+}
+#header .more_header_links_a {
+  position:relative;
+}
+#header .more_header_links_a img {
+  margin: auto 00px;
+}
+
+#header .chain_list_box {
+  position: relative;
+  display: none;
+}
+#header .chain_list_box ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  list-style-type: none;
+}
+#header .chain_list_box ul {
+  position: absolute;
+  left: -60px;
+  max-height: 450px;
+  overflow: auto;
+  max-width: 220px;
+  min-width: 210px;
+  background-color: var(--header_chain_list_color);
+  top: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border:1px solid var(--text_white_black_1);
+}
+#header .chain_list_box ul li img {
+  margin-right: 10px;
+}
+#header .chain_list_box ul li:hover {
+  background-color: var(--header_buttons_hover);
+}
+
+#header .chain_list_div:hover > .chain_list_box {
+  display: block;
+}
+
+/* =++++========= bottom_side_bar ============+++++= */
+#bottom_side_bar {
+  z-index:+9999999;
+  width: 100%;
+  position: fixed;
+  padding: 15px;
+  bottom: -500px;
+  transition: 0.5s;
+}
+#bottom_side_bar * {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#bottom_side_bar .bottom_side_bar_div {
+  width: 100%;
+  background-color: var(--header_color);
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+#bottom_side_bar .bottom_side_bar_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#bottom_side_bar .bottom_side_bar_div .bottom_side_bar_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#bottom_side_bar .bottom_side_bar_div .bottom_side_bar_column img {
+  margin-bottom: 5px;
+}
+#bottom_side_bar .bottom_side_bar_div .bottom_side_bar_column p {
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: var(--text_white_black_1);
+}
+#header .more_header_links_a:hover > .more_links_div{
+    display: block;
+}
+#header .more_header_links_a .more_links_div ul li{
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+#header .more_header_links_a .more_links_div ul li:hover{
+    background-color: var(--header_buttons_hover);
+}
+#header .more_header_links_a .more_links_div{
+  position: absolute;
+  top: 38px;
+  display: none;
+  left: 00px;
+  background-color: var(--header_chain_list_color);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+
+
+
+
+
+
+
+.main {
+  background-color: var(--main_div_color);
+  width: 100%;
+  padding: 20px 00px 100px 00px;
+}
+
+
+
+
+
+
+.d-none{
+  display:none !important;
+}
+/* main loading animation  */
+#main_loading_div{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #000e0e, #0e0007);
+    overflow:hidden;
+    position:fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-loading-container{
+    max-width: 400px;
+    min-width: 300px;
+    height: 10px;
+    background-image: linear-gradient(to right,rgb(0, 119, 255),rgb(0, 183, 255));
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-loading-animation{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    animation: loading 2s infinite linear;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  #header .header_left_links_div {
+    display: none;
+  }
+  #bottom_side_bar {
+    bottom: 00px;
+  }
+}
+
+@media (max-width: 330px) {
+  #bottom_side_bar .bottom_side_bar_div {
+    padding: 10px 10px;
+  }
+}

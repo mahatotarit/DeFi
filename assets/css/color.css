@@ -1,0 +1,10 @@
+:root{
+    --header_color:rgba(20,23,26,.9);
+    --header_chain_list_color:rgba(20,23,26,1);
+    --header_buttons_hover:rgb(50, 50, 50);
+    --header_buttons_normal:rgb(40, 40, 40);
+
+    --text_white_black_1:#C1C1C1;
+    --main_div_color:#0E0E0E;
+    --bridge_box_color:#14171A;
+}

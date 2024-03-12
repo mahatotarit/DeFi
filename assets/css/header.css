@@ -15,6 +15,10 @@
   backdrop-filter: blur(6px) !important;
 }
 
+li{
+    list-style-type: none;
+}
+
 body{
   background-color:var(--main_div_color);
 }

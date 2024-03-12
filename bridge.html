@@ -4,99 +4,262 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web3 Project</title>
+    <title>Bridge</title>
 
     <link rel="stylesheet" href="assets/css/header.css" />
     <link rel="stylesheet" href="assets/css/bridge.css">
 
+    <style>
+        .bridge_all_modal_box{
+            width: 100%;
+            position: relative;
+            height: 100%;
+            display: block;
+            background-color: transparent;
+
+        }
+        .bridge_all_modal_box .select_from_network_box{
+            position: absolute;
+            top: 2000px;
+            background-color: aliceblue;
+            padding: 10px;
+            transition: 0.4s;
+            background-color: var(--bridge_box_color);
+        }
+        .bridge_all_modal_box .select_from_network_box{
+          width: 100%;
+        }
+        .bridge_all_modal_box .select_from_network_box .close_box_icon{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bridge_all_modal_box .select_from_network_box .close_box_icon svg{
+            width: 20px;
+        }
+        .select_from_network_box *{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .bridge_all_modal_box .select_from_network_box .close_box_icon h2{
+            color:white;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_name_text_div{
+            margin-top: 10px;
+            color: white;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list{
+           margin-top: 8%;
+           height: 100%;
+           overflow: auto;
+           max-height: 500px;
+           min-height: 500px;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list ul li:hover {
+           background-color: var(--header_buttons_hover);
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list ul li {
+            margin-top:5px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: flex;
+            color: white;
+            align-items: center;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list ul li img{
+           width: 35px;
+           margin-right: 10px;
+        }
+
+    </style>
+
   </head>
   <body>
     <div id="header"></div>
-
-    <div id="main_loading_div" class="">
-      <div class="main-loading-container">
-        <div class="main-loading-animation"></div>
-      </div>
-    </div>
 
     <div class="main">
         <div class="page_top_space_div"></div>
 
         <div class="bridge_box_div">
             <div class="bridge_box">
-                <h2 class="bridge_box_heading_h4"><b>Bridge</b></h2>
+                <!-- bridge all modal box  -->
+                <div class="bridge_all_modal_box">
 
-                <div class="network_logo_box">
-                    <div class="network_logo_div">
-                    <img src="assets/images/token/bnb.svg" alt="" />
-                    </div>
-                    <div class="network_logo_div">
-                    <img src="assets/images/token/eth_badge.svg" alt="" />
-                    </div>
-                </div>
+                    <div class="select_from_network_box" id="select_from_network_box">
 
-                <div class="select_network_tab_div">
-                    <div class="select_form_box network_s_three">
-                    <span><img class="network_logo" src="assets/images/token/bnb.svg" alt="">BNB</span>
-                    <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
-                    </div>
-                    <div class="select_switch_box network_s_three">
-                        <svg class="switch_n_ic" data-v-0f0f22e7="" width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path data-v-0f0f22e7="" d="M16.7361 3.3069C16.6478 3.21216 16.5413 3.13618 16.423 3.08347C16.3048 3.03077 16.1771 3.00243 16.0476 3.00015C15.9181 2.99787 15.7895 3.02168 15.6695 3.07018C15.5494 3.11867 15.4404 3.19086 15.3488 3.28242C15.2572 3.37398 15.185 3.48305 15.1365 3.60311C15.0881 3.72318 15.0642 3.85178 15.0665 3.98125C15.0688 4.11072 15.0971 4.2384 15.1498 4.35668C15.2025 4.47496 15.2785 4.58141 15.3733 4.66969L17.5846 6.881L5.83924 6.88161C5.58351 6.88161 5.33825 6.9832 5.15742 7.16403C4.97659 7.34486 4.875 7.59012 4.875 7.84585C4.875 8.10158 4.97659 8.34684 5.15742 8.52767C5.33825 8.7085 5.58351 8.81009 5.83924 8.81009L17.5846 8.80948L15.3733 11.0208C15.2785 11.1091 15.2025 11.2155 15.1498 11.3338C15.0971 11.4521 15.0688 11.5798 15.0665 11.7092C15.0642 11.8387 15.0881 11.9673 15.1365 12.0874C15.185 12.2074 15.2572 12.3165 15.3488 12.4081C15.4404 12.4996 15.5494 12.5718 15.6695 12.6203C15.7895 12.6688 15.9181 12.6926 16.0476 12.6903C16.1771 12.688 16.3048 12.6597 16.423 12.607C16.5413 12.5543 16.6478 12.4783 16.7361 12.3836L20.593 8.52664C20.7736 8.34584 20.875 8.10076 20.875 7.84524C20.875 7.58972 20.7736 7.34464 20.593 7.16385L16.7361 3.3069Z" fill="white"></path><path data-v-0f0f22e7="" d="M10.3767 13.0279C10.4715 12.9396 10.5475 12.8332 10.6002 12.7149C10.6529 12.5966 10.6812 12.4689 10.6835 12.3395C10.6858 12.21 10.6619 12.0814 10.6135 11.9613C10.565 11.8413 10.4928 11.7322 10.4012 11.6407C10.3096 11.5491 10.2006 11.4769 10.0805 11.4284C9.96045 11.3799 9.83185 11.3561 9.70238 11.3584C9.57291 11.3607 9.44523 11.389 9.32695 11.4417C9.20867 11.4944 9.10222 11.5704 9.01395 11.6651L5.15699 15.5221C4.97642 15.7029 4.875 15.9479 4.875 16.2035C4.875 16.459 4.97642 16.7041 5.15699 16.8849L9.01395 20.7418C9.19673 20.9121 9.4385 21.0049 9.6883 21.0005C9.9381 20.9961 10.1764 20.8949 10.3531 20.7182C10.5298 20.5415 10.631 20.3032 10.6354 20.0534C10.6398 19.8036 10.5471 19.5618 10.3767 19.379L8.16542 17.1677H19.9108C20.1665 17.1677 20.4118 17.0661 20.5926 16.8853C20.7734 16.7045 20.875 16.4592 20.875 16.2035C20.875 15.9477 20.7734 15.7025 20.5926 15.5217C20.4118 15.3408 20.1665 15.2392 19.9108 15.2392H8.16542L10.3767 13.0279Z" fill="white"></path></svg>
-                    </div>
-                    <div class="select_to_box network_s_three">
-                        <span><img class="network_logo" src="assets/images/token/eth_badge.svg" alt="">Ethereum</span>
-                        <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
-                    </div>
-                </div>
-
-                <div class="spend_input_div">
-                    <small>You Send</small>
-                    <div class="input_box">
-                        <div class="input_with_max_button_div">
-                            <input type="text" placeholder="0.00">
-                            <button>Max</button>
+                        <div class="close_box_icon">
+                            <h2>Select Network</h2>
+                            <svg id="select_from_network_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
                         </div>
-                        <div class="select_token_select_box">
-                            <div class="token_logo_div">
-                                <img src="assets/images/token/eth_badge.svg" alt="">ETH
+                        <div class="network_name_text_div">
+                            <small>Network Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
+                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li><img src="assets/images/token/linea-logo-mainnet.svg" alt="">Linea</li>
+                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li><img src="assets/images/token/polygon-zkevm.svg" alt="">Polygon</li>
+                            <li><img src="assets/images/token/optimism.svg" alt="">Optimism</li>
+                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
+                            <li><img src="assets/images/token/pulse.svg" alt="">Pulse</li>
+                            <li><img src="assets/images/token/avax-token.svg" alt="">Avax</li>
+                            <li><img src="assets/images/token/base.svg" alt="">Base</li>
+                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="select_from_network_box" id="select_to_network_box">
+
+                        <div class="close_box_icon">
+                            <h2>Select Network</h2>
+                            <svg id="select_to_network_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+                        </div>
+                        <div class="network_name_text_div">
+                            <small>Network Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
+                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li><img src="assets/images/token/linea-logo-mainnet.svg" alt="">Linea</li>
+                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li><img src="assets/images/token/polygon-zkevm.svg" alt="">Polygon</li>
+                            <li><img src="assets/images/token/optimism.svg" alt="">Optimism</li>
+                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
+                            <li><img src="assets/images/token/pulse.svg" alt="">Pulse</li>
+                            <li><img src="assets/images/token/avax-token.svg" alt="">Avax</li>
+                            <li><img src="assets/images/token/base.svg" alt="">Base</li>
+                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="select_from_network_box" id="spend_token_box">
+
+                        <div class="close_box_icon">
+                            <h2>Select Token</h2>
+                            <svg id="select_token_spend_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+                        </div>
+                        <div class="network_name_text_div">
+                            <small>Spend Token Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
+                            <li><img src="assets/images/token/contract/aUSDT.svg" alt="">USDT</li>
+                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li><img src="assets/images/token/contract/shib.svg" alt="">SHIB</li>
+                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="select_from_network_box" id="recieve_token_box">
+
+                        <div class="close_box_icon">
+                            <h2>Select Token</h2>
+                            <svg id="select_token_recieve_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+                        </div>
+                        <div class="network_name_text_div">
+                            <small>Recieve Token Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
+                            <li><img src="assets/images/token/contract/aUSDT.svg" alt="">USDT</li>
+                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li><img src="assets/images/token/contract/shib.svg" alt="">SHIB</li>
+                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- token bridge box  -->
+                    <h2 class="bridge_box_heading_h4"><b>Bridge</b></h2>
+
+                    <div class="network_logo_box">
+                        <div class="network_logo_div">
+                           <img src="assets/images/token/bnb.svg" alt="" />
+                        </div>
+                        <div class="network_logo_div">
+                            <img src="assets/images/token/eth_badge.svg" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="select_network_tab_div">
+                        <label for="open_from_chainlist_box" class="select_form_box network_s_three">
+                           <input hidden type="checkbox" id="open_from_chainlist_box">
+                           <span><img class="network_logo" src="assets/images/token/bnb.svg" alt="">BNB</span>
+                           <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                        </label>
+                        <div class="select_switch_box network_s_three">
+                            <svg class="switch_n_ic" data-v-0f0f22e7="" width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path data-v-0f0f22e7="" d="M16.7361 3.3069C16.6478 3.21216 16.5413 3.13618 16.423 3.08347C16.3048 3.03077 16.1771 3.00243 16.0476 3.00015C15.9181 2.99787 15.7895 3.02168 15.6695 3.07018C15.5494 3.11867 15.4404 3.19086 15.3488 3.28242C15.2572 3.37398 15.185 3.48305 15.1365 3.60311C15.0881 3.72318 15.0642 3.85178 15.0665 3.98125C15.0688 4.11072 15.0971 4.2384 15.1498 4.35668C15.2025 4.47496 15.2785 4.58141 15.3733 4.66969L17.5846 6.881L5.83924 6.88161C5.58351 6.88161 5.33825 6.9832 5.15742 7.16403C4.97659 7.34486 4.875 7.59012 4.875 7.84585C4.875 8.10158 4.97659 8.34684 5.15742 8.52767C5.33825 8.7085 5.58351 8.81009 5.83924 8.81009L17.5846 8.80948L15.3733 11.0208C15.2785 11.1091 15.2025 11.2155 15.1498 11.3338C15.0971 11.4521 15.0688 11.5798 15.0665 11.7092C15.0642 11.8387 15.0881 11.9673 15.1365 12.0874C15.185 12.2074 15.2572 12.3165 15.3488 12.4081C15.4404 12.4996 15.5494 12.5718 15.6695 12.6203C15.7895 12.6688 15.9181 12.6926 16.0476 12.6903C16.1771 12.688 16.3048 12.6597 16.423 12.607C16.5413 12.5543 16.6478 12.4783 16.7361 12.3836L20.593 8.52664C20.7736 8.34584 20.875 8.10076 20.875 7.84524C20.875 7.58972 20.7736 7.34464 20.593 7.16385L16.7361 3.3069Z" fill="white"></path><path data-v-0f0f22e7="" d="M10.3767 13.0279C10.4715 12.9396 10.5475 12.8332 10.6002 12.7149C10.6529 12.5966 10.6812 12.4689 10.6835 12.3395C10.6858 12.21 10.6619 12.0814 10.6135 11.9613C10.565 11.8413 10.4928 11.7322 10.4012 11.6407C10.3096 11.5491 10.2006 11.4769 10.0805 11.4284C9.96045 11.3799 9.83185 11.3561 9.70238 11.3584C9.57291 11.3607 9.44523 11.389 9.32695 11.4417C9.20867 11.4944 9.10222 11.5704 9.01395 11.6651L5.15699 15.5221C4.97642 15.7029 4.875 15.9479 4.875 16.2035C4.875 16.459 4.97642 16.7041 5.15699 16.8849L9.01395 20.7418C9.19673 20.9121 9.4385 21.0049 9.6883 21.0005C9.9381 20.9961 10.1764 20.8949 10.3531 20.7182C10.5298 20.5415 10.631 20.3032 10.6354 20.0534C10.6398 19.8036 10.5471 19.5618 10.3767 19.379L8.16542 17.1677H19.9108C20.1665 17.1677 20.4118 17.0661 20.5926 16.8853C20.7734 16.7045 20.875 16.4592 20.875 16.2035C20.875 15.9477 20.7734 15.7025 20.5926 15.5217C20.4118 15.3408 20.1665 15.2392 19.9108 15.2392H8.16542L10.3767 13.0279Z" fill="white"></path></svg>
+                        </div>
+                        <label for="open_to_chainlist_box" id="open_to_chainlist_box" class="select_to_box network_s_three">
+                            <input hidden type="checkbox" id="open_to_chainlist_box">
+                            <span><img class="network_logo" src="assets/images/token/eth_badge.svg" alt="">Ethereum</span>
+                            <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                        </label>
+                    </div>
+
+                    <div class="spend_input_div">
+                        <small>You Send</small>
+                        <div class="input_box">
+                            <div class="input_with_max_button_div">
+                                <input type="text" placeholder="0.00">
+                                <button>Max</button>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                            <label for="spend_input_checkbox" class="select_token_select_box">
+                                <input hidden type="checkbox" id="spend_input_checkbox">
+                                <div class="token_logo_div">
+                                    <img src="assets/images/token/eth_badge.svg" alt="">ETH
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                            </label>
+                        </div>
+                        <div class="balance_text">
+                            Balance: <span>00</span>
                         </div>
                     </div>
-                    <div class="balance_text">
-                        Balance: <span>00</span>
-                    </div>
-                </div>
 
-                <div class="spend_input_div">
-                    <small>You Recieve</small>
-                    <div class="input_box">
-                        <div class="input_with_max_button_div">
-                            <input type="text" placeholder="0.00">
-                        </div>
-                        <div class="select_token_select_box">
-                            <div class="token_logo_div">
-                                <img src="assets/images/token/eth_badge.svg" alt="">ETH
+                    <div class="spend_input_div">
+                        <small>You Recieve</small>
+                        <div class="input_box">
+                            <div class="input_with_max_button_div">
+                                <input type="text" placeholder="0.00">
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                            <label for="recieve_input_checkbox" class="select_token_select_box">
+                                <input hidden type="checkbox" id="recieve_input_checkbox">
+                                <div class="token_logo_div">
+                                    <img src="assets/images/token/eth_badge.svg" alt="">ETH
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                            </label>
                         </div>
                     </div>
-                </div>
 
-                <div class="gas_estimate_me_div">
-                    <div class="gas_es_box gas_es_box_1">
-                        <span>Gas Fee : </span>
-                        <span>0.01</span>
+                    <div class="gas_estimate_me_div">
+                        <div class="gas_es_box gas_es_box_1">
+                            <span>Gas Fee : </span>
+                            <span>0.01</span>
+                        </div>
+                        <div class="gas_es_box">
+                            <span>Estimated Received : </span>
+                            <span>5623.99</span>
+                        </div>
                     </div>
-                     <div class="gas_es_box">
-                        <span>Estimated Received : </span>
-                        <span>5623.99</span>
-                    </div>
-                </div>
 
-                <hr style="margin-top: 20px; border: 1px solid var(--main_div_color);">
+                    <hr style="margin-top: 20px; border: 1px solid var(--main_div_color);">
 
-                <button class="bridge_button">Bridge</button>
+                    <button class="bridge_button">Bridge</button>
 
             </div>
         </div>
@@ -116,3 +279,4 @@
     })
     .catch((error) => console.error('Error loading header:', error));
 </script>
+<script src="assets/js/bridge.js"></script>

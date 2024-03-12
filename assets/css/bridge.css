@@ -10,6 +10,7 @@
   padding: 20px;
   width: 50%;
   margin-top: 10px;
+  overflow:hidden;
   height: 100%;
 }
 .bridge_box_div .bridge_box .bridge_box_heading_h4 {
@@ -174,6 +175,9 @@
 }
 .bridge_box_div .gas_es_box_1 {
   margin-bottom: 10px;
+}
+.open_all_type_bridge_div_box{
+  top:00px !important;
 }
 
 

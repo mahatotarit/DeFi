@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius:50%;
 }
 .bridge_box_div .network_logo_box .network_logo_div {
   border-radius: 10px;
@@ -48,6 +49,7 @@
 .bridge_box_div .select_network_tab_div .network_s_three img {
   padding: 2px;
   margin: 00px 5px;
+  border-radius:50%;
 }
 .bridge_box_div .select_network_tab_div .network_s_three .down_arrow {
   width: 22px;
@@ -123,6 +125,8 @@
 }
 .bridge_box_div .spend_input_div .select_token_select_box .token_logo_div img {
   margin: 00px 5px;
+  border-radius:50%;
+  width:20px;
 }
 .bridge_box_div .spend_input_div .input_with_max_button_div button {
   padding: 2px 5px;
@@ -180,6 +184,75 @@
   top:00px !important;
 }
 
+
+
+
+
+        .bridge_all_modal_box{
+            width: 100%;
+            position: relative;
+            height: 100%;
+            display: block;
+            background-color: transparent;
+
+        }
+        .bridge_all_modal_box .select_from_network_box{
+            position: absolute;
+            top: 2000px;
+            background-color: aliceblue;
+            padding: 10px;
+            transition: 0.4s;
+            background-color: var(--bridge_box_color);
+        }
+        .bridge_all_modal_box .select_from_network_box{
+          width: 100%;
+        }
+        .bridge_all_modal_box .select_from_network_box .close_box_icon{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bridge_all_modal_box .select_from_network_box .close_box_icon svg{
+            width: 20px;
+            cursor:pointer;
+        }
+        .select_from_network_box *{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .bridge_all_modal_box .select_from_network_box .close_box_icon h2{
+            color:white;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_name_text_div{
+            margin-top: 10px;
+            color: white;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list{
+           margin-top: 8%;
+           height: 100%;
+           overflow: auto;
+           max-height: 500px;
+           min-height: 500px;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list ul li:hover {
+           background-color: var(--header_buttons_hover);
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list ul li {
+            margin-top:5px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: flex;
+            color: white;
+            cursor:pointer;
+            align-items: center;
+        }
+        .bridge_all_modal_box .select_from_network_box .network_list ul li img{
+           width: 35px;
+           margin-right: 10px;
+           border-radius:50%;
+        }
+        .bridge_box label{
+          cursor:pointer;
+        }
 
 
 

@@ -16,10 +16,10 @@ let open_to_chainlist_box_div = document.querySelector('#select_to_network_box')
 let select_to_network_box_close_icon = document.querySelector('#select_from_network_box_close_icon');
 
 open_to_chainlist_box_checkbox.addEventListener('click', function () {
-  open_form_chainlist_box_div.classList.add('open_all_type_bridge_div_box');
+  open_to_chainlist_box_div.classList.add('open_all_type_bridge_div_box');
 });
 select_to_network_box_close_icon.addEventListener('click', function () {
-  open_form_chainlist_box_div.classList.remove('open_all_type_bridge_div_box');
+  open_to_chainlist_box_div.classList.remove('open_all_type_bridge_div_box');
 });
 
 
@@ -51,3 +51,83 @@ open_recieve_box_checkbox.addEventListener('click', function () {
 select_recieve_box_close_icon.addEventListener('click', function () {
   open_recieve_box_div.classList.remove('open_all_type_bridge_div_box');
 });
+
+
+// =============================================================================
+// ==================== token and network change bu js =========================
+// =============================================================================
+
+let all_network_token_box = document.querySelectorAll('.select_from_network_box');
+
+// change from network logo
+function change_from_network_logo(network_name){
+  let all_from_network_logo_img = document.querySelectorAll('.from_network_logo');
+   
+  for (let i = 0; i < all_from_network_logo_img.length; i++) {
+    let pre_network_url = all_from_network_logo_img[i].src;
+    let filt_network_name = pre_network_url.split('/');
+    let pre_network_name = filt_network_name[filt_network_name.length - 1].split('.')[0];
+
+    let new_network_url = pre_network_url.replace(pre_network_name, network_name.toLowerCase());
+    all_from_network_logo_img[i].src = new_network_url;
+  }
+
+  all_network_token_box.forEach((element) => { element.classList.remove('open_all_type_bridge_div_box'); });
+
+}
+
+// change to network logo
+function change_to_network_logo(network_name) {
+  let all_to_network_logo_img = document.querySelectorAll('.to_network_logo');
+
+  for (let i = 0; i < all_to_network_logo_img.length; i++) {
+    let pre_network_url = all_to_network_logo_img[i].src;
+    let filt_network_name = pre_network_url.split('/');
+    let pre_network_name = filt_network_name[filt_network_name.length - 1].split('.')[0].toLowerCase();
+
+    let new_network_url = pre_network_url.replace(pre_network_name,network_name.toLowerCase());
+    all_to_network_logo_img[i].src = new_network_url;
+  }
+
+  all_network_token_box.forEach((element) => {
+    element.classList.remove('open_all_type_bridge_div_box');
+  });
+}
+
+// change spend token logo
+
+function change_spend_token_logo(token_name){
+  let all_spend_token = document.querySelectorAll('.spend_token_logo');
+
+    for (let i = 0; i < all_spend_token.length; i++) {
+      let pre_token_url = all_spend_token[i].src;
+      let filt_token_name = pre_token_url.split('/');
+      let pre_token_name = filt_token_name[filt_token_name.length - 1].split('.')[0].toLowerCase();
+
+      let new_token_url = pre_token_url.replace(pre_token_name,token_name.toLowerCase(),);
+      all_spend_token[i].src = new_token_url;
+    }
+
+    all_network_token_box.forEach((element) => {
+      element.classList.remove('open_all_type_bridge_div_box');
+    });
+};
+
+
+// change recieve token logo
+function change_recieve_token_logo(token_name){
+  let all_recieve_token = document.querySelectorAll('.recieve_token_logo');
+
+    for (let i = 0; i < all_recieve_token.length; i++) {
+      let pre_token_url = all_recieve_token[i].src;
+      let filt_token_name = pre_token_url.split('/');
+      let pre_token_name = filt_token_name[filt_token_name.length - 1].split('.')[0].toLowerCase();
+
+      let new_token_url = pre_token_url.replace(pre_token_name,token_name.toLowerCase(),);
+      all_recieve_token[i].src = new_token_url;
+    }
+
+    all_network_token_box.forEach((element) => {
+      element.classList.remove('open_all_type_bridge_div_box');
+    });
+};

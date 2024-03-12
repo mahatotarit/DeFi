@@ -10,66 +10,7 @@
     <link rel="stylesheet" href="assets/css/bridge.css">
 
     <style>
-        .bridge_all_modal_box{
-            width: 100%;
-            position: relative;
-            height: 100%;
-            display: block;
-            background-color: transparent;
-
-        }
-        .bridge_all_modal_box .select_from_network_box{
-            position: absolute;
-            top: 2000px;
-            background-color: aliceblue;
-            padding: 10px;
-            transition: 0.4s;
-            background-color: var(--bridge_box_color);
-        }
-        .bridge_all_modal_box .select_from_network_box{
-          width: 100%;
-        }
-        .bridge_all_modal_box .select_from_network_box .close_box_icon{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .bridge_all_modal_box .select_from_network_box .close_box_icon svg{
-            width: 20px;
-        }
-        .select_from_network_box *{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        .bridge_all_modal_box .select_from_network_box .close_box_icon h2{
-            color:white;
-        }
-        .bridge_all_modal_box .select_from_network_box .network_name_text_div{
-            margin-top: 10px;
-            color: white;
-        }
-        .bridge_all_modal_box .select_from_network_box .network_list{
-           margin-top: 8%;
-           height: 100%;
-           overflow: auto;
-           max-height: 500px;
-           min-height: 500px;
-        }
-        .bridge_all_modal_box .select_from_network_box .network_list ul li:hover {
-           background-color: var(--header_buttons_hover);
-        }
-        .bridge_all_modal_box .select_from_network_box .network_list ul li {
-            margin-top:5px;
-            padding: 5px 10px;
-            border-radius: 10px;
-            display: flex;
-            color: white;
-            align-items: center;
-        }
-        .bridge_all_modal_box .select_from_network_box .network_list ul li img{
-           width: 35px;
-           margin-right: 10px;
-        }
-
+        
     </style>
 
   </head>
@@ -95,17 +36,11 @@
                         </div>
                         <div class="network_list">
                            <ul>
-                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
-                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
-                            <li><img src="assets/images/token/linea-logo-mainnet.svg" alt="">Linea</li>
-                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
-                            <li><img src="assets/images/token/polygon-zkevm.svg" alt="">Polygon</li>
-                            <li><img src="assets/images/token/optimism.svg" alt="">Optimism</li>
-                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
-                            <li><img src="assets/images/token/pulse.svg" alt="">Pulse</li>
-                            <li><img src="assets/images/token/avax-token.svg" alt="">Avax</li>
-                            <li><img src="assets/images/token/base.svg" alt="">Base</li>
-                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
+                            <li onclick="change_from_network_logo('Ethereum')"><img src="assets/images/network/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_from_network_logo('BNB')"><img src="assets/images/network/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_from_network_logo('Linea')"><img src="assets/images/network/linea.svg" alt="">Linea</li>
+                            <li onclick="change_from_network_logo('Mantle')"><img src="assets/images/network/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_from_network_logo('Polygon')"><img src="assets/images/network/polygon.svg" alt="">Polygon</li>
                            </ul>
                         </div>
 
@@ -122,17 +57,11 @@
                         </div>
                         <div class="network_list">
                            <ul>
-                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
-                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
-                            <li><img src="assets/images/token/linea-logo-mainnet.svg" alt="">Linea</li>
-                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
-                            <li><img src="assets/images/token/polygon-zkevm.svg" alt="">Polygon</li>
-                            <li><img src="assets/images/token/optimism.svg" alt="">Optimism</li>
-                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
-                            <li><img src="assets/images/token/pulse.svg" alt="">Pulse</li>
-                            <li><img src="assets/images/token/avax-token.svg" alt="">Avax</li>
-                            <li><img src="assets/images/token/base.svg" alt="">Base</li>
-                            <li><img src="assets/images/token/arbitrum.svg" alt="">Arbitrum</li>
+                            <li onclick="change_to_network_logo('Ethereum')"><img src="assets/images/network/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_to_network_logo('BNB')"><img src="assets/images/network/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_to_network_logo('Linea')"><img src="assets/images/network/linea.svg" alt="">Linea</li>
+                            <li onclick="change_to_network_logo('Mantle')"><img src="assets/images/network/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_to_network_logo('Polygon')"><img src="assets/images/network/polygon.svg" alt="">Polygon</li>
                            </ul>
                         </div>
 
@@ -149,11 +78,11 @@
                         </div>
                         <div class="network_list">
                            <ul>
-                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
-                            <li><img src="assets/images/token/contract/aUSDT.svg" alt="">USDT</li>
-                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
-                            <li><img src="assets/images/token/contract/shib.svg" alt="">SHIB</li>
-                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_spend_token_logo('ethereum')" ><img src="assets/images/token/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_spend_token_logo('linea')" ><img src="assets/images/token/linea.svg" alt="">Linea</li>
+                            <li onclick="change_spend_token_logo('bnb')" ><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_spend_token_logo('mantle')" ><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_spend_token_logo('matic')" ><img src="assets/images/token/matic.svg" alt="">Matic</li>
                            </ul>
                         </div>
 
@@ -170,11 +99,11 @@
                         </div>
                         <div class="network_list">
                            <ul>
-                            <li><img src="assets/images/token/eth_badge.svg" alt="">Ethereum</li>
-                            <li><img src="assets/images/token/contract/aUSDT.svg" alt="">USDT</li>
-                            <li><img src="assets/images/token/bnb.svg" alt="">BNB</li>
-                            <li><img src="assets/images/token/contract/shib.svg" alt="">SHIB</li>
-                            <li><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_recieve_token_logo('ethereum')" ><img src="assets/images/token/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_recieve_token_logo('linea')" ><img src="assets/images/token/linea.svg" alt="">Linea</li>
+                            <li onclick="change_recieve_token_logo('bnb')" ><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_recieve_token_logo('mantle')" ><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_recieve_token_logo('matic')" ><img src="assets/images/token/matic.svg" alt="">Matic</li>
                            </ul>
                         </div>
 
@@ -187,17 +116,17 @@
 
                     <div class="network_logo_box">
                         <div class="network_logo_div">
-                           <img src="assets/images/token/bnb.svg" alt="" />
+                           <img class="from_network_logo" src="assets/images/network/linea.svg" alt="" />
                         </div>
                         <div class="network_logo_div">
-                            <img src="assets/images/token/eth_badge.svg" alt="" />
+                            <img class="to_network_logo" src="assets/images/network/bnb.svg" alt="" />
                         </div>
                     </div>
 
                     <div class="select_network_tab_div">
                         <label for="open_from_chainlist_box" class="select_form_box network_s_three">
                            <input hidden type="checkbox" id="open_from_chainlist_box">
-                           <span><img class="network_logo" src="assets/images/token/bnb.svg" alt="">BNB</span>
+                           <span><img class="network_logo from_network_logo" src="assets/images/network/linea.svg" alt="">BNB</span>
                            <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
                         </label>
                         <div class="select_switch_box network_s_three">
@@ -205,7 +134,7 @@
                         </div>
                         <label for="open_to_chainlist_box" id="open_to_chainlist_box" class="select_to_box network_s_three">
                             <input hidden type="checkbox" id="open_to_chainlist_box">
-                            <span><img class="network_logo" src="assets/images/token/eth_badge.svg" alt="">Ethereum</span>
+                            <span><img class="network_logo to_network_logo" src="assets/images/network/bnb.svg" alt="">Ethereum</span>
                             <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
                         </label>
                     </div>
@@ -220,7 +149,7 @@
                             <label for="spend_input_checkbox" class="select_token_select_box">
                                 <input hidden type="checkbox" id="spend_input_checkbox">
                                 <div class="token_logo_div">
-                                    <img src="assets/images/token/eth_badge.svg" alt="">ETH
+                                    <img class="spend_token_logo" src="assets/images/token/ethereum.svg" alt="">ETH
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
                             </label>
@@ -234,12 +163,12 @@
                         <small>You Recieve</small>
                         <div class="input_box">
                             <div class="input_with_max_button_div">
-                                <input type="text" placeholder="0.00">
+                                <input type="text" placeholder="0.00" style="width:100% !important;">
                             </div>
                             <label for="recieve_input_checkbox" class="select_token_select_box">
                                 <input hidden type="checkbox" id="recieve_input_checkbox">
                                 <div class="token_logo_div">
-                                    <img src="assets/images/token/eth_badge.svg" alt="">ETH
+                                    <img class="recieve_token_logo" src="assets/images/token/ethereum.svg" alt="">ETH
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
                             </label>

@@ -13,7 +13,7 @@ select_from_network_box_close_icon.addEventListener('click', function () {
 // open to chainlist div
 let open_to_chainlist_box_checkbox = document.querySelector('#open_to_chainlist_box');
 let open_to_chainlist_box_div = document.querySelector('#select_to_network_box');
-let select_to_network_box_close_icon = document.querySelector('#select_from_network_box_close_icon');
+let select_to_network_box_close_icon = document.querySelector('#select_to_network_box_close_icon');
 
 open_to_chainlist_box_checkbox.addEventListener('click', function () {
   open_to_chainlist_box_div.classList.add('open_all_type_bridge_div_box');

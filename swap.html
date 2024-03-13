@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swap</title>
+
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/swap.css">
+
+    <style>
+        
+    </style>
+
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <div class="main">
+        <div class="page_top_space_div"></div>
+
+        <div class="swap_box_div">
+            <div class="swap_box">
+                <!-- swap all modal box  -->
+                <div class="swap_all_modal_box">
+
+                    <div class="select_from_network_box" id="select_from_network_box">
+
+                        <div class="close_box_icon">
+                            <h2>Select Network</h2>
+                            <svg id="select_from_network_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+                        </div>
+                        <div class="network_name_text_div">
+                            <small>Network Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li onclick="change_from_network_logo('Ethereum')"><img src="assets/images/network/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_from_network_logo('BNB')"><img src="assets/images/network/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_from_network_logo('Linea')"><img src="assets/images/network/linea.svg" alt="">Linea</li>
+                            <li onclick="change_from_network_logo('Mantle')"><img src="assets/images/network/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_from_network_logo('Polygon')"><img src="assets/images/network/polygon.svg" alt="">Polygon</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="select_from_network_box" id="spend_token_box">
+
+                        <div class="close_box_icon">
+                            <h2>Select Token</h2>
+                            <svg id="select_token_spend_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+                        </div>
+                        <div class="network_name_text_div">
+                            <small>Spend Token Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li onclick="change_spend_token_logo('ethereum')" ><img src="assets/images/token/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_spend_token_logo('linea')" ><img src="assets/images/token/linea.svg" alt="">Linea</li>
+                            <li onclick="change_spend_token_logo('bnb')" ><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_spend_token_logo('mantle')" ><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_spend_token_logo('matic')" ><img src="assets/images/token/matic.svg" alt="">Matic</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="select_from_network_box" id="recieve_token_box">
+
+                        <div class="close_box_icon">
+                            <h2>Select Token</h2>
+                            <svg id="select_token_recieve_box_close_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+                        </div>
+                        <div class="network_name_text_div">
+                            <small>Recieve Token Name</small>
+                        </div>
+                        <div class="network_list">
+                           <ul>
+                            <li onclick="change_recieve_token_logo('ethereum')" ><img src="assets/images/token/ethereum.svg" alt="">Ethereum</li>
+                            <li onclick="change_recieve_token_logo('linea')" ><img src="assets/images/token/linea.svg" alt="">Linea</li>
+                            <li onclick="change_recieve_token_logo('bnb')" ><img src="assets/images/token/bnb.svg" alt="">BNB</li>
+                            <li onclick="change_recieve_token_logo('mantle')" ><img src="assets/images/token/mantle.svg" alt="">Mantle</li>
+                            <li onclick="change_recieve_token_logo('matic')" ><img src="assets/images/token/matic.svg" alt="">Matic</li>
+                           </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- token Swap box  -->
+                    <h2 class="swap_box_heading_h4"><b>Swap</b></h2>
+
+
+                    <div class="select_network_tab_div">
+                        <label for="open_from_chainlist_box" class="select_form_box network_s_three">
+                           <input hidden type="checkbox" id="open_from_chainlist_box">
+                           <span><img class="network_logo from_network_logo" src="assets/images/network/linea.svg" alt="">BNB</span>
+                           <svg class="down_arrow down_arrow_width" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                        </label>
+                    </div>
+
+                    <div class="spend_input_div">
+                        <small>You Send</small>
+                        <div class="input_box">
+                            <div class="input_with_max_button_div">
+                                <input type="text" placeholder="0.00">
+                                <button>Max</button>
+                            </div>
+                            <label for="spend_input_checkbox" class="select_token_select_box">
+                                <input hidden type="checkbox" id="spend_input_checkbox">
+                                <div class="token_logo_div">
+                                    <img class="spend_token_logo" src="assets/images/token/ethereum.svg" alt="">ETH
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                            </label>
+                        </div>
+                        <div class="balance_text">
+                            Balance: <span>00</span>
+                        </div>
+                    </div>
+
+                    <div class="spend_input_div">
+                        <small>You Recieve</small>
+                        <div class="input_box">
+                            <div class="input_with_max_button_div">
+                                <input type="text" placeholder="0.00" style="width:100% !important;">
+                            </div>
+                            <label for="recieve_input_checkbox" class="select_token_select_box">
+                                <input hidden type="checkbox" id="recieve_input_checkbox">
+                                <div class="token_logo_div">
+                                    <img class="recieve_token_logo" src="assets/images/token/ethereum.svg" alt="">ETH
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="down_arrow_width" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z" fill="white" opacity="1" data-original="white" class=""></path></g></svg>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="gas_estimate_me_div">
+                        <div class="gas_es_box gas_es_box_1">
+                            <span>Gas Fee : </span>
+                            <span>0.01</span>
+                        </div>
+                        <div class="gas_es_box">
+                            <span>Estimated Received : </span>
+                            <span>5623.99</span>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: 20px; border: 1px solid var(--main_div_color);">
+
+                    <button class="swap_button">Swap</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+  </body>
+</html>
+<script>
+  fetch('header.html')
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById('header').innerHTML = data;
+      document.querySelector('#main_loading_div').classList.add('d-none');
+    })
+    .catch((error) => console.error('Error loading header:', error));
+</script>
+<script src="assets/js/swap.js"></script>

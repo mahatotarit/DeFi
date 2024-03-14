@@ -44,7 +44,7 @@
 
             </div>
             <div class="connect_button_div">
-                <button>Connect <img src="assets/images/icons/myconnect_right_arrow.svg" alt=""></button>
+                <button class="open_wallet_connet_button">Connect <img src="assets/images/icons/myconnect_right_arrow.svg" alt=""></button>
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@
 
 <div id="main_loading_div" class="">
     <div class="main-loading-container">
-     <div class="main-loading-animation"></div>
+      <div class="main-loading-animation"></div>
     </div>
 </div>
 
@@ -77,3 +77,46 @@
         </div>
     </div>
 </bottom>
+
+
+
+
+<!-- ================================================================================================= -->
+
+<style>
+
+</style>
+
+<div class="wallet_connect_modal">
+   <div class="wallet_connect_box">
+
+        <div class="close_modal_div">
+            <b>Connet a Wallet</b>  
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m50 462c5 5 9 7 16 7 7 0 12-2 17-7l173-173 173 173c5 5 10 7 17 7 7 0 11-2 16-7 10-9 10-23 0-33l-173-173 173-173c10-10 10-24 0-33-9-10-23-10-33 0l-173 173-173-173c-10-10-24-10-33 0-10 9-10 23 0 33l173 173-173 173c-10 10-10 24 0 33z" fill="#ffffff"/></svg>
+        </div>
+        <div class="wallet_list">
+            <ul>
+                <b><small style="color: var(--text_white_black_1);">Recommand</small></b><br>
+                <li> 
+                    <div>
+                        <img src="assets/images/wallet/metamask.svg" alt="">
+                        <b>Metamask</b>
+                    </div>
+                    <img class="connect_loading" src="assets/images/icons/spinner.gif" alt="">
+                </li>
+            </ul>
+        </div>
+
+   </div>
+</div>
+<script>
+let open_wallet_connet_button = document.querySelector('.open_wallet_connet_button');
+let wallet_connect_modal = document.querySelector('.wallet_connect_modal');
+
+function open_wallet_cunnect_box(){
+    console.log('sdkfsdkf');
+    wallet_connect_modal.classList.add('open_wallet_connect_box');
+}
+open_wallet_connet_button.addEventListener("click",open_wallet_cunnect_box);
+
+</script>

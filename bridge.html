@@ -197,7 +197,13 @@
 
 
 
-  </body>
+</body>
+
+    <script src="assets/dist/variables.js"></script>
+    <script src="assets/dist/connect_wallet.js"></script>
+
+    <script src="assets/js/bridge.js"></script>
+
 </html>
 <script>
   fetch('header.html')
@@ -205,7 +211,18 @@
     .then((data) => {
       document.getElementById('header').innerHTML = data;
       document.querySelector('#main_loading_div').classList.add('d-none');
+
+
+      // to fetch header .js file
+    fetch('assets/js/header.js')
+        .then((response) => response.text())
+        .then((scriptText) => {
+        const scriptElement = document.createElement('script');
+        scriptElement.textContent = scriptText;
+        document.head.appendChild(scriptElement); 
+        })
+        .catch((error) => console.error('Error loading script:', error));
+
     })
     .catch((error) => console.error('Error loading header:', error));
 </script>
-<script src="assets/js/bridge.js"></script>

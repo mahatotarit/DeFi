@@ -108,16 +108,37 @@ a{
   cursor:pointer;
   border: none;
   font-weight: bold;
+  max-width:125px;
   margin-left: 15px;
   color: white;
   font-size: 16px;
-  overflow: hidden;
   position:relative;
   background-image: linear-gradient(
     to right,
     rgb(0, 119, 255),
     rgb(0, 183, 255)
   );
+}
+
+#header .connect_button_div button .disconnect_wallet_div{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+
+    width: 100%;
+    max-width:125px;
+    height: 100%;
+    position: absolute;
+    bottom: -37px;
+    text-align: center;
+    left: 0px;
+    background-color: var(--bridge_box_color);
+    border-radius: 5px;
+    z-index:+9999;
+    color:white;
+    padding:5px 5px;
+    box-shadow:0px 0px 1px white;
+    font-size:14px;
 }
 
 #header .connect_button_div button img {
@@ -288,7 +309,6 @@ a{
 
 
 
-
 @media (max-width: 768px) {
   #header .header_left_links_div {
     display: none;
@@ -306,71 +326,71 @@ a{
 
 
 /* ================================== wallet connect box ============================================ */
-    .wallet_connect_modal *{
-       color: white;
-       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .wallet_connect_modal{
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.548);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition:0.5s;
+.wallet_connect_modal *{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.wallet_connect_modal{
+    width: 100%;
+    height: 100vh;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:0.5s;
 
-        position:fixed;
-        top: 2000px;
-    }
-    .open_wallet_connect_box{
-      top:00px !important;
-    }
-    .wallet_connect_box{
-        max-width: 420px;
-        min-width: 400px;
-        min-height: 400px;
-        background-color: var(--main_div_color);
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0px 0px 2px var(--text_white_black_1);
-    }
-    .wallet_connect_modal  .wallet_connect_box .close_modal_div{
-       width: 100%;
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       padding: 5px 20px;
-    }
-    .wallet_connect_modal  .wallet_connect_box .close_modal_div b{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 20px;
-    }
-    .wallet_connect_modal  .wallet_connect_box .close_modal_div svg{
-         width: 20px;
-         cursor: pointer;
-    }
-    .wallet_connect_modal  .wallet_connect_box .wallet_list ul{
-     padding: 5px 20px;
-     margin-top: 10px;
-    }
-    .wallet_connect_modal  .wallet_connect_box .wallet_list ul li img{ 
-      margin-right: 15px;
-      width: 30px;
-    }
-    .wallet_connect_modal  .wallet_connect_box .wallet_list ul li:hover{
-      background-color: var(--header_buttons_hover);
-    }
-    .wallet_connect_modal  .wallet_connect_box .wallet_list ul li > div{
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
-    .wallet_connect_modal  .wallet_connect_box .wallet_list ul li{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        padding: 10px 10px;
-        align-items: center;
-        border-radius: 10px;
-        cursor: pointer;
-    }
+    position:fixed;
+    top: 2000px;
+}
+.open_wallet_connect_box{
+  top:00px !important;
+}
+.wallet_connect_box{
+    max-width: 420px;
+    min-width: 400px;
+    min-height: 400px;
+    background-color: var(--main_div_color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 2px var(--text_white_black_1);
+}
+.wallet_connect_modal  .wallet_connect_box .close_modal_div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+.wallet_connect_modal  .wallet_connect_box .close_modal_div b{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.wallet_connect_modal  .wallet_connect_box .close_modal_div svg{
+      width: 20px;
+      cursor: pointer;
+}
+.wallet_connect_modal  .wallet_connect_box .wallet_list ul{
+  padding: 5px 20px;
+  margin-top: 10px;
+}
+.wallet_connect_modal  .wallet_connect_box .wallet_list ul li img{ 
+  margin-right: 15px;
+  width: 30px;
+}
+.wallet_connect_modal  .wallet_connect_box .wallet_list ul li:hover{
+  background-color: var(--header_buttons_hover);
+}
+.wallet_connect_modal  .wallet_connect_box .wallet_list ul li > div{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.wallet_connect_modal  .wallet_connect_box .wallet_list ul li{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 10px;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}

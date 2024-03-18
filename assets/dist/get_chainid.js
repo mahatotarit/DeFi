@@ -12,3 +12,9 @@ async function getChainId() {
 }
 
 getChainId();
+
+window_provider.on('network', (newNetwork, oldNetwork) => {
+  if (oldNetwork) {
+    console.log('Chain changed:', oldNetwork.chainId, '=>', newNetwork.chainId);
+  }
+});

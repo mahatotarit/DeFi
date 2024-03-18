@@ -55,6 +55,7 @@ function connect_metamask_wallet(li) {
       .then((accounts) => {
         const selectedAccount = accounts[0];
         set_user_wallet_address(selectedAccount);
+        getChainId();
         set_address_in_connect_button(selectedAccount);
       })
       .catch((error) => {

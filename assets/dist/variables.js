@@ -1,6 +1,6 @@
 let user_wallet_address;
-let user_wallet_chainId;
 let network_name = [['Linea', 59144],['Ethereum', 1],['BNB', 56],['Polygon', 137],['Mantle',5000]];
+let selected_network = [];
 
 // ============== variable set values functions ======================
 
@@ -10,6 +10,12 @@ function set_user_wallet_address(user_address){
 }
 
 // set wallet chain id variable
-function set_wallet_chainId(chainid){
-  user_wallet_chainId = chainid.trim();
+function set_wallet_network(chainid){
+  for (let i = 0; i < network_name.length; i++) {
+      if(network_name[i][1] == chainid){
+        selected_network = network_name[i];
+      }
+  }
+
+  console.log(selected_network);
 }

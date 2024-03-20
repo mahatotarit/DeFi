@@ -45,17 +45,19 @@ function set_address_in_connect_button(user_address) {
 }
 
 // connect metamask function
-function connect_metamask_wallet(li) {
+async function connect_metamask_wallet(li) {
   connect_spinner = li.querySelector('.connect_loading');
   spinner_action('open', connect_spinner);
 
   if (typeof window.ethereum !== 'undefined') {
     window.ethereum
       .request({ method: 'eth_requestAccounts' })
-      .then((accounts) => {
+      .then(async (accounts) => {
         const selectedAccount = accounts[0];
         set_user_wallet_address(selectedAccount);
-        getChainId();
+        let chain_id_c = await getChainId();
+        await set_wallet_network(chain_id_c, '');
+        change_from_network_logo(selected_network[0]);
         set_address_in_connect_button(selectedAccount);
       })
       .catch((error) => {

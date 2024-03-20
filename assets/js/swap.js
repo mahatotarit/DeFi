@@ -45,24 +45,29 @@ let all_network_token_box = document.querySelectorAll('.select_from_network_box'
 
 // change from network logo
 async function change_from_network_logo(network_name) {
-  let all_from_network_logo_img =
-    document.querySelectorAll('.from_network_logo');
 
-  for (let i = 0; i < all_from_network_logo_img.length; i++) {
-    let pre_network_url = all_from_network_logo_img[i].src;
-    let filt_network_name = pre_network_url.split('/');
-    let pre_network_name = filt_network_name[filt_network_name.length - 1].split('.')[0];
+  let all_from_network_logo_img = document.querySelectorAll('.from_network_logo');
+  let change_one_time = true;
 
-    let new_network_url = pre_network_url.replace( pre_network_name, network_name.toLowerCase());
+    for (let i = 0; i < all_from_network_logo_img.length; i++) {
+      let pre_network_url = all_from_network_logo_img[i].src;
+      let filt_network_name = pre_network_url.split('/');
+      let pre_network_name =
+        filt_network_name[filt_network_name.length - 1].split('.')[0];
 
-    try {
-      await set_wallet_network("",network_name);
-      all_from_network_logo_img[i].src = new_network_url;
-    } catch (error) {
-      
+      let new_network_url = pre_network_url.replace(pre_network_name,network_name.toLowerCase(),);
+
+      try {
+        if(change_one_time){
+          await set_wallet_network('', network_name);
+          change_one_time = false;
+        }
+        all_from_network_logo_img[i].src = new_network_url;
+      } catch (error) {
+
+      }
     }
-
-  }
+    change_one_time = true;
 
   all_network_token_box.forEach((element) => {
     element.classList.remove('open_all_type_swap_div_box');

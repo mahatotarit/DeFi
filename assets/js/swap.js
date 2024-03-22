@@ -45,8 +45,15 @@ let all_network_token_box = document.querySelectorAll('.select_from_network_box'
 
 // change from network logo
 async function change_from_network_logo(network_name) {
-
+  if (
+    user_wallet_address == '' ||
+    user_wallet_address == null ||
+    user_wallet_address == undefined
+  ) {
+    await connect_metamask();
+  }
   let all_from_network_logo_img = document.querySelectorAll('.from_network_logo');
+  let form_swap_net_name_span = document.querySelectorAll('.form_swap_net_name_span');
   let change_one_time = true;
 
     for (let i = 0; i < all_from_network_logo_img.length; i++) {
@@ -62,6 +69,9 @@ async function change_from_network_logo(network_name) {
           await set_wallet_network('', network_name);
           change_one_time = false;
         }
+        form_swap_net_name_span.forEach((element) => {
+          element.textContent = network_name;
+        });
         all_from_network_logo_img[i].src = new_network_url;
       } catch (error) {
 

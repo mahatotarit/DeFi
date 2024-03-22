@@ -25,3 +25,19 @@ function close_wallet_connect_box_fun(){
         element.classList.add('d-none');
     });
 }
+
+
+// ================ page redirect funcitons =====================
+let swap_page_link = document.querySelector('#swap_page_link');
+let bridge_page_link = document.querySelector('#bridge_page_link');
+
+
+var domainName = window.origin+"/";
+console.log('Domain Name: ' + domainName);
+
+swap_page_link.addEventListener('click',function(){
+    window.location.href = domainName+'swap.html';
+})
+bridge_page_link.addEventListener('click', function () {
+  window.location.href = domainName+'bridge.html';
+});

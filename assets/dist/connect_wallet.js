@@ -1,4 +1,4 @@
-let connect_spinner;
+let connect_spinner = document.querySelector('.connect_loading');
 
 // disconnect wallet function
 function disconnect_wallet(ele) {
@@ -17,11 +17,15 @@ function disconnect_wallet(ele) {
 
 // spinner action
 function spinner_action(action, ele) {
-  if (action == 'open' || action == 'OPEN') {
-    ele.classList.remove('d-none');
-  } else {
-    ele.classList.add('d-none');
-  }
+ try {
+   if (action == 'open' || action == 'OPEN') {
+     ele.classList.remove('d-none');
+   } else {
+     ele.classList.add('d-none');
+   }
+ } catch (error) {
+  
+ }
 }
 
 // set address in button
@@ -48,7 +52,10 @@ function set_address_in_connect_button(user_address) {
 async function connect_metamask_wallet(li) {
   connect_spinner = li.querySelector('.connect_loading');
   spinner_action('open', connect_spinner);
+  connect_metamask();
+}
 
+async function connect_metamask() {
   if (typeof window.ethereum !== 'undefined') {
     window.ethereum
       .request({ method: 'eth_requestAccounts' })
@@ -63,10 +70,13 @@ async function connect_metamask_wallet(li) {
       .catch((error) => {
         if (error.code == 4001) {
           alert('user denied to connect wallet address');
-        } spinner_action('close', connect_spinner);
+        }
+        spinner_action('close', connect_spinner);
       });
   } else {
     spinner_action('close', connect_spinner);
     console.log('MetaMask is not installed. Please install it to connect.');
   }
 }
+
+connect_metamask();
